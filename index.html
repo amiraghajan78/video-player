@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="../public/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js" type="text/javascript" defer></script>
+    <title>Video Player</title>
+</head>
+<body>
+    <main class="video-player-container">
+        <section class="video-player">
+            <section class="video-container">
+                <video class="main-video" src="./public/videos/default-video.mp4" id="video"></video>
+            </section>
+            <section class="controllers-container">
+                <div class="progress-bar-container f-c">
+                    <div class="progress-bar">
+                        <div class="progress-bar-track">
+                            <span class="progress-bar-thumb"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="controllers">
+                    <div class="volume-container f-c">
+                        <i class="fa fa-volume-mute" id="speaker-icon"></i>
+                        <input type="range" min="0" max="100" step="1" value="25" id="volume" class="video-volume" />
+                        <label for="volume" class="volume-range-container" id="volume-range">0</label>
+                    </div>
+                    <div class="actions-buttons-container f-c">
+                        <button class="controllers-btn f-c" id="stop-btn"><i class="fa fa-stop"></i></button>
+                        <button class="controllers-btn f-c" id="prev-btn"><i class="fa fa-step-backward"></i></button>
+                        <button class="controllers-btn f-c" id="backward-btn"><i class="fa fa-fast-backward"></i></button>
+                        <button class="controllers-btn f-c" id="play-pause-btn">
+                            <i class="fa fa-play" id="play-pause-btn-icon"></i>
+                        </button>
+                        <button class="controllers-btn f-c" id="forward-btn"><i class="fa fa-fast-forward"></i></button>
+                        <button class="controllers-btn f-c" id="next-btn"><i class="fa fa-step-forward"></i></button>
+                        <button class="controllers-btn f-c" id="random-btn"><i class="fa fa-random"></i></button>
+                    </div>
+                    <div class="video-times-container f-c">
+                        <span class="video-times" id="current-time">00:00</span>
+                        <span class="video-times">|</span>
+                        <span class="video-times" id="duration-time">00:00</span>
+                    </div>
+                    <div class="speed-btn-container f-c">
+                        <button class="f-c" id="speed-btn"><i class="fa fa-tachometer-alt-fast"></i></button>
+                        <div class="tooltip" id="tooltip-box">
+                            <button class="speed-btn-item" value="2">2x</button>
+                            <button class="speed-btn-item" value="4">4x</button>
+                            <button class="speed-btn-item" value="6">6x</button>
+                            <button class="speed-btn-item" value="8">8x</button>
+                            <button class="speed-btn-item" value="10">10x</button>
+                            <button class="speed-btn-item" value="1">Normal</button>
+                            <span class="triangle"></span>
+                        </div>
+                    </div>
+                    <div class="setting-container f-c">
+                        <button class="setting-btn f-c" id="setting">
+                            <i class="fa fa-gear"></i>
+                        </button>
+                        <div class="mobile-menu">
+                            <span class="menu-triangle"></span>
+                            <div class="menu-top f-c">
+                                <i class="fa fa-volume-mute" id="menu-speaker-icon"></i>
+                                <input type="range" min="0" max="100" step="1" value="25" id="menu-volume" class="video-volume" />
+                                <label for="volume" class="volume-range-container" id="menu-volume-range">0</label>
+                            </div>
+                            <div class="menu-bottom">
+                                <div class="drop-down-box">
+                                    <span class="drop-down-title">Select Video Speed</span>
+                                    <i class="fa fa-angle-down" id="drop-down-icon"></i>
+                                    <ul class="drop-down-menu">
+                                        <li class="drop-down-item" value="2">2x</li>
+                                        <li class="drop-down-item" value="4">4x</li>
+                                        <li class="drop-down-item" value="6">6x</li>
+                                        <li class="drop-down-item" value="8">8x</li>
+                                        <li class="drop-down-item" value="10">10x</li>
+                                        <li class="drop-down-item" value="1">Normal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-btn-container f-c">
+                        <button class="screen-btn f-c" id="screen-button">
+                            <i class="fa fa-expand" id="screen-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <h2 id="video-title">The default video is playing.</h2>
+    </main>
+    <aside class="side-bar">
+        <h4 class="side-bar-title">Click Video to Play.</h4>
+        <section class="side-bar-videos-container"></section>
+    </aside>
+</body>
+</html>
